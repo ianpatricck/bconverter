@@ -1,0 +1,13 @@
+{
+  "name": "bconverter-api",
+  "version": "1.0.0",
+  "description": "A free conversion API",
+  "main": "dist/index.js",
+  "repository": "git@github.com:ianpatricck/bconverter-api.git",
+  "author": "ianpatricck <contatoianpatrick@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}
