@@ -1,10 +1,9 @@
 import { ServerResponse, IncomingMessage } from "http";
+import { getRouteData } from './utils/route';
+import { converterController } from './usecases/converter';
 
 // Hello World!
-const start = (response: ServerResponse) => {
-
-  response.statusCode = 200;
-  response.setHeader('Content-Type', 'application/json'); 
+const start = (response: ServerResponse) => { 
 
   let initialContent = {
     Hello: "Welcome to BConverter API ;)",
@@ -18,10 +17,35 @@ const start = (response: ServerResponse) => {
 
 }
 
-function router(req: IncomingMessage, res: ServerResponse) {
-  
-  if (req.url === '/') start(res);
+/*
+ * Routing application
+ *
+ */
 
+function router(req: IncomingMessage, res: ServerResponse) {
+
+  // Default response
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+
+  if (req.url === '/') start(res); 
+  if (req.url && req.url !== '/' && req.url !== '/favicon.ico') {
+
+    const routeData = getRouteData(req.url);
+
+    switch (routeData.route) {
+
+      case "converter":
+        converterController.handle(req, res, routeData);
+        break;
+
+      default:
+        res.statusCode = 404;
+        return res.end(JSON.stringify(404));
+    }
+
+  }
+  
 }
 
 export default router;
