@@ -41,7 +41,7 @@ class ConverterController {
 
       var result = isNumeric ? FUNCTION_RULE(Number(value)) : FUNCTION_RULE(value);
 
-      if (result !== undefined) {
+      if (result !== undefined && result !== null && !isNaN(result)) {
         return response.end(JSON.stringify(result));
       } else {
         
@@ -56,7 +56,7 @@ class ConverterController {
     } catch (err) {
       return response.end(JSON.stringify({ error: (err as Error).message })); 
     }
-
+ 
     return response.end(JSON.stringify(data));
 
   }
