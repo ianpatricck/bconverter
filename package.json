@@ -1,7 +1,7 @@
 {
   "name": "bconverter-api",
   "version": "1.0.0",
-  "description": "A free conversion API",
+  "description": "A simple conversion API",
   "scripts": {
     "dev": "nodemon dist/index.js"
   },
