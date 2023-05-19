@@ -20,11 +20,18 @@ class ConverterUseCase implements IConverterUseCase {
     } while (counter >= 2 && decimal >= 2);
 
     return Number(results.reverse().join(''));
+
   }
 
   binaryToDecimal(binary: number): number | undefined {
-    // ...
-    return binary;
+ 
+    let binaryList = Array.from(String(binary), Number);  
+    let binaryPowAndSumList = binaryList.reverse().map((element, index) => Math.pow(2, index) * element);
+
+    let decimalSum = binaryPowAndSumList.reduce((a, b) => a + b, 0);
+
+    return decimalSum;
+
   }
 
 }

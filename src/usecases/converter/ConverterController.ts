@@ -63,7 +63,8 @@ class ConverterController {
 
   objectRules(): object {
     return {
-      'decimal-to-binary': this.converterUseCase.decimalToBinary
+      'decimal-to-binary': this.converterUseCase.decimalToBinary,
+      'binary-to-decimal': this.converterUseCase.binaryToDecimal
     }
   }
 
