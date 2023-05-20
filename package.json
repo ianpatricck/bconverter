@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "A simple conversion API",
   "scripts": {
-    "dev": "nodemon dist/index.js"
+    "dev": "nodemon dist/server.js",
+    "start": "node dist/server.js"
   },
-  "main": "dist/index.js",
+  "main": "dist/start.js",
   "repository": "git@github.com:ianpatricck/bconverter.git",
   "author": "ianpatricck <contatoianpatrick@gmail.com>",
   "license": "MIT",
