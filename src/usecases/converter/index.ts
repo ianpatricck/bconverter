@@ -1,6 +1,10 @@
 import ConverterController from "./ConverterController";
 import ConverterUseCase from './ConverterUseCase';
 
-const converterController = new ConverterController(new ConverterUseCase());
+const converterUseCase = new ConverterUseCase();
+const converterController = new ConverterController(converterUseCase);
 
-export { converterController };
+export {
+  converterUseCase as converter,
+  converterController
+};
