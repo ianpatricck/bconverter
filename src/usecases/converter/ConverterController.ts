@@ -40,19 +40,8 @@ class ConverterController {
       const isNumeric = Number(value) ? true : false; 
 
       var result = isNumeric ? FUNCTION_RULE(Number(value)) : FUNCTION_RULE(value);
-
-      if (result !== undefined && result !== null && !isNaN(result)) {
-        return response.end(JSON.stringify(result));
-      } else {
-        
-        response.statusCode = 402;
-        
-        return response.end(JSON.stringify({
-          error: 'value is not valid',
-          data: data
-        }));
-      }
-
+      return response.end(JSON.stringify(result));
+     
     } catch (err) {
       return response.end(JSON.stringify({ error: (err as Error).message })); 
     }
@@ -64,10 +53,11 @@ class ConverterController {
   objectRules(): object {
     return {
       'decimal-to-binary': this.converterUseCase.decimalToBinary,
-      'binary-to-decimal': this.converterUseCase.binaryToDecimal
+      'binary-to-decimal': this.converterUseCase.binaryToDecimal,
+
+      'decimal-to-hexadecimal': this.converterUseCase.decimalToHexadecimal,
     }
   }
-
 
 }
 
