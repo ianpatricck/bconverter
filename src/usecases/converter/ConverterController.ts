@@ -56,6 +56,20 @@ class ConverterController {
       'binary-to-decimal': this.converterUseCase.binaryToDecimal,
 
       'decimal-to-hexadecimal': this.converterUseCase.decimalToHexadecimal,
+      'hexadecimal-to-decimal': this.converterUseCase.hexadecimalToDecimal,
+
+      'binary-to-hexadecimal': null,
+      'hexadecimal-to-binary': null,
+
+      'decimal-to-octal': this.converterUseCase.decimalToOctal,
+      'octal-to-decimal': null,
+
+      'octal-to-hexadecimal': null,
+      'hexadecimal-to-octal': null,
+
+      'octal-to-binary': null,
+      'binary-to-octal': null, 
+
     }
   }
 

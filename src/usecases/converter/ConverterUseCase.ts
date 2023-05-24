@@ -76,6 +76,30 @@ class ConverterUseCase implements IConverterUseCase {
 
     return result;
   }
+  
+  hexadecimalToDecimal(hexadecimal: string): number | null {
+    return 1;
+  }
+
+  decimalToOctal(decimal: number): number | null {
+
+    var results: number[] = [];
+    var counter = decimal;
+
+    do {
+
+      counter--;
+      
+      let rest = decimal % 8;
+      decimal = Math.floor(decimal / 8);
+
+      results.push(rest);
+      if (decimal < 2) results.push(decimal); 
+
+    } while (counter >= 2 && decimal >= 2);
+
+    return Number(results.reverse().join(''));
+  }
 
 }
 
