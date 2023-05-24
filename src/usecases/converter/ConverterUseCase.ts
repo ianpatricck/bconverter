@@ -78,7 +78,32 @@ class ConverterUseCase implements IConverterUseCase {
   }
   
   hexadecimalToDecimal(hexadecimal: string): number | null {
-    return 1;
+
+    const numbersGreaterThanTen = {
+      'A': '10',
+      'B': '11',
+      'C': '12',
+      'D': '13',
+      'E': '14',
+      'F': '15'
+    };
+
+    let hexadecimalList = Array.from(String(hexadecimal), String);  
+
+    hexadecimalList.forEach(n => {
+
+      for (let prop in numbersGreaterThanTen) {
+        if (n == prop)
+          hexadecimalList[hexadecimalList.indexOf(n)] = numbersGreaterThanTen[prop as keyof object];
+      }
+    
+    });
+
+    let decimalList = hexadecimalList.map(Number);  
+    let decimalPowAndSumList = decimalList.reverse().map((element, index) => Math.pow(16, index) * element);
+    let decimalSum = decimalPowAndSumList.reduce((a, b) => a + b, 0);
+
+    return decimalSum;
   }
 
   decimalToOctal(decimal: number): number | null {
