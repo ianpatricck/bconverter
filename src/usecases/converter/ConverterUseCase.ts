@@ -161,6 +161,18 @@ class ConverterUseCase implements IConverterUseCase {
     return octalSum;
   } 
 
+  octalToHexadecimal(octal: number): string | null {
+
+    const decimalValue = this.octalToDecimal(octal);
+    
+    if (typeof decimalValue === 'number') {
+      const hexadecimalValue = this.decimalToHexadecimal(decimalValue);
+      return hexadecimalValue;
+    }
+
+    return null;
+  }
+
 }
 
 export default ConverterUseCase;
