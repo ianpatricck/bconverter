@@ -6,6 +6,7 @@ interface IConverterUseCase {
   binaryToHexadecimal(binary: number): string | null;
   hexadecimalToBinary(hexadecimal: string): number | null;
   decimalToOctal(decimal: number): number | null;
+  octalToDecimal(octal: number): number | null;
 }
 
 export default IConverterUseCase;

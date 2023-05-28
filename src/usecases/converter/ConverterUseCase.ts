@@ -150,6 +150,16 @@ class ConverterUseCase implements IConverterUseCase {
 
     return Number(results.reverse().join(''));
   }
+ 
+  octalToDecimal(octal: number): number | null {
+ 
+    let octalList = Array.from(String(octal), Number); 
+
+    let octalPowAndSumList = octalList.reverse().map((element, index) => Math.pow(8, index) * element);
+    let octalSum = octalPowAndSumList.reduce((a, b) => a + b, 0);
+
+    return octalSum;
+  } 
 
 }
 
