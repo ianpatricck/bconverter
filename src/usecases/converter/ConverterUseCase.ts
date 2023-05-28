@@ -24,14 +24,17 @@ class ConverterUseCase implements IConverterUseCase {
   }
 
   binaryToDecimal(binary: number): number | null {
- 
+    
     let binaryList = Array.from(String(binary), Number);  
-    let binaryPowAndSumList = binaryList.reverse().map((element, index) => Math.pow(2, index) * element);
+    const differentElement = binaryList.filter(elem => elem !== 0 && elem !== 1);
+    
+    if (differentElement.length > 0)
+      return null;
 
+    let binaryPowAndSumList = binaryList.reverse().map((element, index) => Math.pow(2, index) * element);
     let decimalSum = binaryPowAndSumList.reduce((a, b) => a + b, 0);
 
     return decimalSum;
-
   }
 
   decimalToHexadecimal(decimal: number): string | null {
