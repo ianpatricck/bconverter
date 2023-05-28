@@ -120,6 +120,17 @@ class ConverterUseCase implements IConverterUseCase {
     return null;
   }
 
+  hexadecimalToBinary(hexadecimal: string): number | null {
+    const decimalValue = this.hexadecimalToDecimal(hexadecimal);
+
+    if (typeof decimalValue === 'number') {
+      const binaryValue = this.decimalToBinary(decimalValue);
+      return binaryValue;
+    }
+
+    return null;
+  }
+
   decimalToOctal(decimal: number): number | null {
 
     var results: number[] = [];
