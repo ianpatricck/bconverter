@@ -67,7 +67,7 @@ class ConverterController {
       'octal-to-hexadecimal': this.converterUseCase.octalToHexadecimal.bind(this.converterUseCase),
       'hexadecimal-to-octal': this.converterUseCase.hexadecimalToOctal.bind(this.converterUseCase),
 
-      'octal-to-binary': null,
+      'octal-to-binary': this.converterUseCase.octalToBinary.bind(this.converterUseCase),
       'binary-to-octal': null, 
 
     }

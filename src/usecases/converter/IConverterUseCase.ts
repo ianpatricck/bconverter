@@ -9,6 +9,8 @@ interface IConverterUseCase {
   octalToDecimal(octal: number): number | null;
   octalToHexadecimal(octal: number): string | null; 
   hexadecimalToOctal(hexadecimal: string): number | null;
+  octalToBinary(octal: number): number | null;
+
 }
 
 export default IConverterUseCase;
