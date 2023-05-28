@@ -1,7 +1,7 @@
 import IConverterUseCase from './IConverterUseCase';
 
 class ConverterUseCase implements IConverterUseCase {
-
+ 
   decimalToBinary(decimal: number): number | null {
 
     var results: number[] = [];
@@ -104,6 +104,17 @@ class ConverterUseCase implements IConverterUseCase {
     let decimalSum = decimalPowAndSumList.reduce((a, b) => a + b, 0);
 
     return decimalSum;
+  }
+
+  binaryToHexadecimal(binary: number): string | null {
+    const decimalValue = this.binaryToDecimal(binary);
+
+    if (typeof decimalValue === 'number') {
+      const hexadecimalValue = this.decimalToHexadecimal(decimalValue);
+      return hexadecimalValue;
+    }
+
+    return null;
   }
 
   decimalToOctal(decimal: number): number | null {

@@ -3,6 +3,7 @@ interface IConverterUseCase {
   binaryToDecimal(binary: number): number | null;
   decimalToHexadecimal(decimal: number): string | null;
   hexadecimalToDecimal(hexadecimal: string): number | null;
+  binaryToHexadecimal(binary: number): string | null;
   decimalToOctal(decimal: number): number | null;
 }
 
