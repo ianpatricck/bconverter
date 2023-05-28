@@ -10,6 +10,7 @@ interface IConverterUseCase {
   octalToHexadecimal(octal: number): string | null; 
   hexadecimalToOctal(hexadecimal: string): number | null;
   octalToBinary(octal: number): number | null;
+  binaryToOctal(binary: number): number | null;
 
 }
 

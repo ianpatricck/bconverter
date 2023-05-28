@@ -197,6 +197,18 @@ class ConverterUseCase implements IConverterUseCase {
     return null;
   }
 
+  binaryToOctal(binary: number): number | null {
+    
+    const decimalValue = this.binaryToDecimal(binary);
+    
+    if (typeof decimalValue === 'number') {
+      const octalValue = this.decimalToOctal(decimalValue);
+      return octalValue;
+    }
+      
+    return null;
+  }
+
 }
 
 export default ConverterUseCase;
