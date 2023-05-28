@@ -173,6 +173,18 @@ class ConverterUseCase implements IConverterUseCase {
     return null;
   }
 
+  hexadecimalToOctal(hexadecimal: string): number | null {
+
+    const decimalValue = this.hexadecimalToDecimal(hexadecimal);
+  
+    if (typeof decimalValue === 'number') {
+      const octalValue = this.decimalToOctal(decimalValue);
+      return octalValue;
+    }
+     
+    return null;
+  }
+
 }
 
 export default ConverterUseCase;

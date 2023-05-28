@@ -8,6 +8,7 @@ interface IConverterUseCase {
   decimalToOctal(decimal: number): number | null;
   octalToDecimal(octal: number): number | null;
   octalToHexadecimal(octal: number): string | null; 
+  hexadecimalToOctal(hexadecimal: string): number | null;
 }
 
 export default IConverterUseCase;
