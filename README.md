@@ -30,7 +30,7 @@ This can also be started as a node.js server:
 
 ```
 $ tsc --watch
-$ yarn dev
+$ yarn start
 ```
 
 and then allow access to the project's API:
