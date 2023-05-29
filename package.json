@@ -2,11 +2,14 @@
   "name": "bconverter",
   "version": "1.0.0",
   "description": "A simple conversion API",
+  "keywords": [
+    "api", "converter", "typescript", "binary", "ascii", "decoder", "hexadecimal", "octal"
+  ],
   "scripts": {
     "dev": "nodemon dist/server.js",
     "start": "node dist/server.js"
   },
-  "main": "dist/start.js",
+  "main": "dist/index.js",
   "repository": "git@github.com:ianpatricck/bconverter.git",
   "author": "ianpatricck <contatoianpatrick@gmail.com>",
   "license": "MIT",
